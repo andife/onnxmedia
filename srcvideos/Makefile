@@ -4,12 +4,12 @@ PELICANOPTS=
 
 BASEDIR=$(CURDIR)
 INPUTDIR=$(BASEDIR)/content
-OUTPUTDIR=$(BASEDIR)/../videos
+OUTPUTDIR=$(BASEDIR)
 DATADIR=$(BASEDIR)/data
 CONFFILE=$(BASEDIR)/pelicanconf.py
 PUBLISHCONF=$(BASEDIR)/publishconf.py
 
-GITHUB_PAGES_REPO=git@github.com:andife/onnxvideo.github.io.git
+GITHUB_PAGES_REPO=git@github.com:andife/onnxmedia.github.io.git
 PREVIEW_GITHUB_PAGES_REPO=git@github.com:pyvideo-preview/pyvideo-preview.github.io.git
 
 DEBUG ?= 0
