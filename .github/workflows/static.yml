@@ -45,9 +45,8 @@ jobs:
         run: |
           cd srcvideos
           make html-prod
-          #- name: Fix Path
-        #run: |
-        #cd videos
+       - name: Fix Path
+        run: |
           bash ../srcvideos/afonnxtools/replace2.sh
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
