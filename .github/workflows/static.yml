@@ -31,8 +31,24 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.8'
       - name: Setup Pages
         uses: actions/configure-pages@v3
+      - name: Install Dependencies
+        run: |
+          python -m pip install --quiet --upgrade pip setuptools wheel
+          python -m pip install -r srcvideos/requirements.txt
+      - name: Build Docs
+        run: |
+          cd srcvideos
+          make html-prod
+      - name: Fix Path
+        run: |
+          cd videos
+          bash ../srcvideos/afonnxtools/replace2.sh
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
